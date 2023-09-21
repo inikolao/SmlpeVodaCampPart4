@@ -1,30 +1,30 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 const initialState = {
-    eventList:[],
-    eventR:null,
+    eventsList: [],
+    selectedEvent: null,
     status:"idle",
     error:''
 }
 
-export const fetchEvents = createAsyncThunk('events/getall',async()=>{
+export const fetchEvents = createAsyncThunk('fetch/events',async()=>{
     let response = await fetch('http://localhost:3001/events')
     return response.json()
 
 })
 
-export const fetchEventsById = createAsyncThunk('events/getbyid',async(id)=>{
-    let response = await fetch(`http://localhost:3001/events/${id}`)
+export const fetchEventsById = createAsyncThunk('fetch/eventsbyID',async(id)=>{
+    const response = await fetch(`http://localhost:3001/events/${id}`)
     return response.json()
 
 })
 
-export const fetchEventsByPublic = createAsyncThunk('events/getpublic',async(publicflag)=>{
+export const fetchEventsByPublic = createAsyncThunk('fetchData',async(publicflag)=>{
     let response = await fetch(`http://localhost:3001/events?id=${publicflag}`)
     return response.json()
 
 })
 
-export const addEvent =createAsyncThunk('events/add', async(eventdata)=>
+export const addEvent =createAsyncThunk('update/events', async(eventdata)=>
 {
     let response =await fetch(`http://localhost:3001/events`,{
         method:'POST',
@@ -65,7 +65,8 @@ const eventslice = createSlice({
         });
         builder.addCase(fetchEvents.fulfilled, (state, action) => {
             state.status = 'success';
-            state.eventList = state.eventList.concat(action.payload);
+            //state.eventsList = state.eventsList.concat(action.payload);
+            state.eventsList = action.payload;
         });
         builder.addCase(fetchEvents.rejected, (state, action) => {
             state.status = 'error';
@@ -77,7 +78,7 @@ const eventslice = createSlice({
         builder.addCase(fetchEventsById.fulfilled, (state, action) => {
             state.status = 'success';
             //state.eventR = state.eventR.concat(action.payload);
-           state.eventR = action.payload;
+           state.selectedEvent = action.payload;
         });
         builder.addCase(fetchEventsById.rejected, (state, action) => {
             state.status = 'error';
@@ -88,7 +89,7 @@ const eventslice = createSlice({
         })
         builder.addCase(fetchEventsByPublic.fulfilled, (state, action)=>{
             state.status = 'success';
-            state.eventR = state.eventR.concat(action.payload);
+            state.selectedEvent = state.selectedEvent.concat(action.payload);
         })
         builder.addCase(fetchEventsByPublic.rejected, (state, action)=>{
             state.status='error';
@@ -99,5 +100,5 @@ const eventslice = createSlice({
 
 //export let
 //console.log(eventslice.reducer)
-export let {eventList}= state => state.eventsreducer.eventList;
+//export let {eventList}= state => state.eventsreducer.eventList;
 export default eventslice.reducer;

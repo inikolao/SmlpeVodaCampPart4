@@ -101,7 +101,7 @@
       "public": false,
       "files": [
         {
-          "file1": "img3",
+          "file1": "img1",
           "file2": "img2"
         }
       ]
@@ -117,8 +117,8 @@
       "public": false,
       "files": [
         {
-          "file1": "/somethinhg",
-          "file2": "/somethinhg"
+          "file1": "img2",
+          "file2": "img1"
         }
       ]
     }

@@ -40,7 +40,7 @@ export const registerUser = createAsyncThunk('register/user', async(user)=>{
 })
 
 const userslice = createSlice({
-    name:'userslice',
+    name:'usersLb',
     initialState,
     reducers:{
         logoutUser:(state, action)=>{

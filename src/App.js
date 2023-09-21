@@ -14,6 +14,7 @@ import Logout from "./components/pages/LoginPage/logout";
 import Eventlist from "./components/pages/EventPage/Manage/eventlist";
 import Profile from "./components/profile";
 import EventListPublic from "./components/pages/EventPage/Public/eventListPublic";
+import Eventprofile from "./components/pages/EventPage/eventprofile";
 
 function App() {
     const [token, setToken] = useState();
@@ -30,6 +31,7 @@ function App() {
                 <Route path='/eventlist' element={<Eventlist/>}></Route>
                 <Route path='/logout' element={<Logout/>}></Route>
                 <Route path='/profile/:username' element={<Profile/>}></Route>
+                <Route path='/eventprofile/:id' element={<Eventprofile/>}></Route>
             </Routes>
         </BrowserRouter>
 

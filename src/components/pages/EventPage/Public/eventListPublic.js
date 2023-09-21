@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import eventprofile from "../eventprofile";
 
 
 function EventListPublic() {
@@ -18,6 +19,12 @@ function EventListPublic() {
             "image": "img2.jpg"
         }
     ]);
+
+    function eventDetails(id) {
+        //eventprofile(id);
+
+    }
+
 
     useEffect(()=> {
         console.log('event profiles');
@@ -56,9 +63,10 @@ function EventListPublic() {
                 </button>
             </div>
             <div id="slide" className="card text-center">
-                <h1 data-testid="title">{slides[index]["title"]}</h1>
-                <p data-testid="text">{slides[index]["text"]}</p>
-                <img src={require('../../../rawFiles/'+slides[index]["image"])}  height="600"/>
+                <h1 data-testid="title" >{slides[index]["title"]}</h1>
+                <p data-testid="description">{slides[index]["description"]}</p>
+                <p data-testid="location">{slides[index]["location"]}</p>
+                <img src={require('../../../rawFiles/'+slides[index]["image"])} height="600"/>
             </div>
         </div>
     );

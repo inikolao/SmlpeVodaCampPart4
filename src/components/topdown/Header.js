@@ -7,13 +7,10 @@ function Header() {
 
    const [sessionStorage,setStorage]=useState();
 
-    const isLoggedIn = false; //useSelector((state)=> state.userreducer.isLoggedIn);
-    //const dispatch = useDispatch();
-    const username = "kati3";//useSelector((state)=> state.userreducer.username);
-  //  const cart = useSelector(cartitems);
-  //  console.log('navbar username', cart.length)
-  //  console.log(cart)
-    ////
+    const isLoggedIn = useSelector((state)=> state.userreducer.isLoggedIn);
+    const dispatch = useDispatch();
+    const username = useSelector((state)=> state.userreducer.username);
+
 
 
     return (
@@ -54,17 +51,17 @@ function Header() {
                             {
                                 isLoggedIn &&
                                 <li className="nav-item">
-                                    <a className="nav-link" to="/eventlist">
+                                    <NavLink className="nav-link" to="/eventlist">
                                         My Events
-                                    </a>
+                                    </NavLink>
                                 </li>
                             }
                             {//onClick={()=>dispatch(logoutUser())}
                                 isLoggedIn &&
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/" >
+                                    <NavLink className="nav-link" to="/logout" >
                                         Logout
-                                    </a>
+                                    </NavLink>
                                 </li>
                             }
                             {

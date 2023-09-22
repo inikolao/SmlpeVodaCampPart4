@@ -1,13 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {useEffect} from 'react';
+import {useDispatch} from "react-redux";
+import {logoutUser} from "../../../reduxLib/userLib";
+import {useNavigate} from "react-router-dom";
 
-Logout.propTypes = {
-    
-};
+function Logout() {
+    const dispatch = useDispatch();
+    let navigate = useNavigate();
 
-function Logout(props) {
+    useEffect(()=>{
+        dispatch(logoutUser());
+        navigate('/');
+    },[]);
+
     return (
-        <div></div>
+        <div>
+
+        </div>
     );
 }
 

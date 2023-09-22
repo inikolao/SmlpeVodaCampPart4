@@ -23,6 +23,16 @@ export const fetchEventsByPublic = createAsyncThunk('fetchData',async(publicflag
     return response.json()
 
 })
+export const filterEventsByOwnerId = createAsyncThunk(
+    'events/filterByOwnerId',
+    async (ownerId) => {
+        // Simulate an asynchronous operation, e.g., fetching data from an API.
+        let response = await fetch('http://localhost:3001/events');
+        const filteredEvents = response.json().filter((event) => event.ownerid === ownerId);
+
+        return filteredEvents;
+    }
+);
 
 export const addEvent =createAsyncThunk('update/events', async(eventdata)=>
 {
@@ -94,6 +104,18 @@ const eventslice = createSlice({
         builder.addCase(fetchEventsByPublic.rejected, (state, action)=>{
             state.status='error';
             state.error = state.error.message || 'Failed to fetch event by public flag';
+        })
+        builder.addCase(filterEventsByOwnerId.pending, (state, action)=>{
+            state.status='loading';
+        })
+        builder.addCase(filterEventsByOwnerId.fulfilled, (state, action)=>{
+            state.status = 'success';
+            //state.selectedEvent = state.selectedEvent.concat(action.payload);
+            state.eventsList=action.payload;
+        })
+        builder.addCase(filterEventsByOwnerId.rejected, (state, action)=>{
+            state.status='error';
+            state.error = state.error.message || 'Failed to fetch event by owner flag';
         })
     }
 })

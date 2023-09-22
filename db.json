@@ -5,6 +5,7 @@
       "username": "admin",
       "name": "John",
       "surname": "Nk",
+      "city": "Athens",
       "email": "nikolao@iapps.com",
       "password": "sa"
     },
@@ -13,6 +14,7 @@
       "username": "kati2",
       "name": "John",
       "surname": "Tester",
+      "city": "Athens",
       "email": "tester@iapps.com",
       "password": "sa"
     },
@@ -21,6 +23,7 @@
       "username": "kati3",
       "name": "typicode",
       "surname": "smsl",
+      "city": "Athens",
       "email": "kati@kdkd.com",
       "password": "sa"
     },
@@ -29,6 +32,7 @@
       "username": "kati4",
       "name": "typicode",
       "surname": "da",
+      "city": "Athens",
       "email": "kati@kdkd.com",
       "password": "sa"
     },
@@ -37,6 +41,7 @@
       "username": "kati5",
       "name": "typicode",
       "surname": "dsad",
+      "city": "Athens",
       "email": "kati@kdkd.com",
       "password": "sa"
     },
@@ -45,6 +50,7 @@
       "username": "kati5",
       "name": "typicode",
       "surname": "dsad",
+      "city": "Athens",
       "email": "kati@kdkd.com",
       "password": "sa"
     },
@@ -53,8 +59,18 @@
       "username": "kati6",
       "name": "typicode",
       "surname": "dasd",
+      "city": "Athens",
       "email": "kati@kdkd.com",
       "password": "sa"
+    },
+    {
+      "username": "xyz",
+      "name": "a",
+      "surname": "s",
+      "city": "London",
+      "email": "Giannhspc@gmail.com",
+      "password": "sa",
+      "id": 7
     }
   ],
   "events": [

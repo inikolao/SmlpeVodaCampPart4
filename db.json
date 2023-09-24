@@ -79,8 +79,8 @@
       "title": "some comment",
       "description": "some event",
       "datetime": "20-3-2023 20:30",
-      "location": "bar tiki",
-      "city": "Athens",
+      "location": "stathis bar",
+      "city": "Patras",
       "ownerid": 1,
       "public": true,
       "files": [
@@ -129,7 +129,7 @@
       "datetime": "20-4-2023 20:30",
       "location": "bar tiki",
       "city": "patras",
-      "ownerid": 4,
+      "ownerid": 1,
       "public": false,
       "files": [
         {

@@ -15,6 +15,8 @@ import Eventlist from "./components/pages/EventPage/Manage/eventlist";
 import Profile from "./components/profile";
 import EventListPublic from "./components/pages/EventPage/Public/eventListPublic";
 import Eventprofile from "./components/pages/EventPage/eventprofile";
+import EditEvent from "./components/pages/EventPage/Manage/editEvent";
+import AddEvent from "./components/pages/EventPage/Manage/addEvent";
 
 function App() {
     const [token, setToken] = useState();
@@ -32,6 +34,8 @@ function App() {
                 <Route path='/logout' element={<Logout/>}></Route>
                 <Route path='/profile/:username' element={<Profile/>}></Route>
                 <Route path='/eventprofile/:id' element={<Eventprofile/>}></Route>
+                <Route path='/edit/:id' element={<EditEvent/>}></Route>
+                <Route path='/eventadd' element={<AddEvent/>}></Route>
             </Routes>
         </BrowserRouter>
 

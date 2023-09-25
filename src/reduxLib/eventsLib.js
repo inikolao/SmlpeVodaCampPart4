@@ -157,14 +157,14 @@ const eventslice = createSlice({
             state.error = state.error.message || 'Failed to delete event';
         })
         builder.addCase(addEvent.pending, (state, action)=>{
-            state.editstatus='loading';
+            state.registerstatus='loading';
         })
         builder.addCase(addEvent.fulfilled, (state, action)=>{
-            state.editstatus = 'success';
+            state.registerstatus = 'success';
             //state.selectedEvent = state.selectedEvent.concat(action.payload);
         })
         builder.addCase(addEvent.rejected, (state, action)=>{
-            state.editstatus='error';
+            state.registerstatus='error';
             state.error = state.error.message || 'Failed to add event';
         })
     }

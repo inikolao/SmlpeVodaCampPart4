@@ -75,22 +75,6 @@
   ],
   "events": [
     {
-      "id": 1,
-      "title": "some comment",
-      "description": "some event",
-      "datetime": "20-3-2023 20:30",
-      "location": "stathis bar",
-      "city": "Patras",
-      "ownerid": 1,
-      "public": true,
-      "files": [
-        {
-          "file1": "img1",
-          "file2": "/somethinhg"
-        }
-      ]
-    },
-    {
       "id": 2,
       "title": "some comment",
       "description": "some event",
@@ -137,6 +121,38 @@
           "file2": "img1"
         }
       ]
+    },
+    {
+      "title": "aa",
+      "description": "aa",
+      "datetime": "2023-09-25T00:34",
+      "location": "stathis bar",
+      "city": "Patras",
+      "ownerid": 0,
+      "public": true,
+      "files": [
+        {
+          "file1": "img2",
+          "file2": "img1"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "title": "karnavali",
+      "description": "sad",
+      "datetime": "2023-09-13T22:57",
+      "location": "cscs",
+      "city": "Patras",
+      "ownerid": "1",
+      "public": true,
+      "files": [
+        {
+          "file1": "img2",
+          "file2": "img1"
+        }
+      ],
+      "id": 7
     }
   ]
 }

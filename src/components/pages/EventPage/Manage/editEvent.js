@@ -38,6 +38,7 @@ function EditEvent() {
         if(editstatus === 'success'){
             alert('Edit successful!')
             navigate('/eventlist');
+            window.location.reload();
             dispatch(changeEditStatus());
         }
 
@@ -86,7 +87,7 @@ function EditEvent() {
                 <div className="mb-3">
                     <label htmlFor="datetime" className="form-label">Date and Time</label>
                     <input
-                        type="text"
+                        type="datetime-local"
                         className="form-control"
                         name="datetime"
                         value={editedEvent.datetime}

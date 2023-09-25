@@ -11,6 +11,7 @@ function Logout() {
         dispatch(logoutUser());
 
         navigate('/');
+        window.location.reload();
     },[]);
 
     return (

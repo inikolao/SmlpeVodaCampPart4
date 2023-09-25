@@ -12,6 +12,11 @@ const initialState ={
     "city": "",
     "ownerid": 0,
     "public": false,
+    "files": [
+        {
+            "file1": "img2",
+            "file2": "img1"
+        }]
 }
 
 function AddEvent() {
@@ -22,12 +27,13 @@ function AddEvent() {
     const [selectedOption, setSelectedOption] = useState('');
     let registerstatus = useSelector((state)=> state.eventsreducer.registerstatus);
     let isLoggedin = useSelector((state)=> state.userreducer.loginstatus);
-    //let isLoggedin = useSelector((state)=> state.userreducer.id);
+    let userid = useSelector((state)=> state.userreducer.id);
 
     useEffect(()=>{
         if(registerstatus === 'success'){
-            alert('Registration successful')
-            navigate('/login')
+            alert('Registration successful');
+            navigate('/eventlist');
+            window.location.reload();
             dispatch(changeRegisterStatus());
         }
 
@@ -35,8 +41,11 @@ function AddEvent() {
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        // console.log('Selected option:', selectedOption);
-        //console.log('City option:', user.city);
+        console.log('event create: ', eventreg);
+        console.log('User: ', userid);
+        eventreg.ownerid=userid;
+        eventreg.files.file1="img2";
+        eventreg.files.file2="imgsome";
         dispatch(addEvent(eventreg));
         // You can do something with the selected option here
 

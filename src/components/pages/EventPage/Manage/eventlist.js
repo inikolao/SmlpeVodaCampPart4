@@ -45,19 +45,6 @@ function Eventlist() {
     const handleSubmit = (event) => {
         dispatch(deleteEvent(event));
     };
-    function contents()
-    {
-        if(state.status === 'loading'){
-            return  <p text="Loading..." />;
-        }
-        else if(state.status==='success'){
-            return (<div className='container'>
-                    <h3>List Of Available Items</h3>
-                    { eventlist.map(item => <p key={item.id} item={item}/>)}
-                </div>
-            )
-        }
-    }
 
 
     return (
@@ -70,7 +57,7 @@ function Eventlist() {
                         <div>
                             <h2><a href={`/eventprofile/${event.id}`}>{event.title}</a></h2>
                             <button onClick={() => navigate(`/edit/${event.id}`)}>Edit</button>
-                            <button onClick={() =>handleSubmit(event)}>Delete</button>
+                            <button onClick={() =>{handleSubmit(event); window.location.reload();  }}>Delete</button>
                         </div>
                         <p>Description: {event.description}</p>
                         <p>Date and Time: {event.datetime}</p>
